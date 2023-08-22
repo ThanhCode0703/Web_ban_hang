@@ -11,11 +11,13 @@ function App()
       <HeaderComponents />
      <Router>
       <Routes>
-        {routes.map((route) => 
+        {routes.map((route, index) => 
         {
           const Page = route.page;
+          
           return (
-          <Route path={route.path} element={<Page />} />
+            <Route key={index} path={ route.path} element={<Page />} />
+          // <Route path={route.path} element={<Page />} />
           )
         }
         )}
